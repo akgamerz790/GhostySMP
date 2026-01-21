@@ -1,4 +1,11 @@
-package dev.akgamerz_790.ghostysmp;
+package dev.akgamerz_790.ghostysmp.core;
+
+import dev.akgamerz_790.ghostysmp.GhostySMP;
+import dev.akgamerz_790.ghostysmp.core.GhostType;
+import dev.akgamerz_790.ghostysmp.abilities.AbilityManager;
+import dev.akgamerz_790.ghostysmp.utils.Util;
+
+
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.*;
@@ -67,9 +74,9 @@ public class GhostManager implements Listener {
         Player p = e.getPlayer();
         if (!e.hasItem() || p.hasCooldown(e.getItem().getType())) return;
         ItemMeta m = e.getItem().getItemMeta();
-        if (m == null || !m.getPersistentDataContainer().has(GhostType.TYPE_KEY, PersistentDataType.STRING)) return;
+        if (m == null || !m.getPersistentDataContainer().has(GhostType.TYPE_KEY(), PersistentDataType.STRING)) return;
         
-        GhostType type = GhostType.valueOf(m.getPersistentDataContainer().get(GhostType.TYPE_KEY, PersistentDataType.STRING));
+        GhostType type = GhostType.valueOf(m.getPersistentDataContainer().get(GhostType.TYPE_KEY(), PersistentDataType.STRING));
         UUID id = p.getUniqueId();
         cooldowns.computeIfAbsent(id, k -> new HashMap<>());
         long now = System.currentTimeMillis();

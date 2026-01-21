@@ -1,0 +1,17 @@
+name: GhostySMP
+version: 1.0.0
+main: dev.akgamerz_790.ghostysmp.GhostySMP
+api-version: 1.21
+author: akgamerz_790
+description: Ghost abilities for SMP
+
+commands:
+  ghost:
+    description: Give ghost items
+    usage: /ghost <type>
+    permission: ghostsmp.use
+
+permissions:
+  ghostsmp.use:
+    description: Use ghost items
+    default: true

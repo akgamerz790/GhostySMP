@@ -1,6 +1,8 @@
-package dev.akgamerz_790.ghostysmp;
+package dev.akgamerz_790.ghostysmp.core;
 
 import org.bukkit.NamespacedKey;
+
+import dev.akgamerz_790.ghostysmp.GhostySMP;
 
 public enum GhostType {
 
@@ -21,8 +23,10 @@ public enum GhostType {
     public final String display;
     public final int cooldownSeconds;
 
-    public static final NamespacedKey TYPE_KEY =
-            new NamespacedKey("ghostysmp", "type");
+    public static NamespacedKey TYPE_KEY() {
+    return new NamespacedKey(GhostySMP.instance, "type");
+}
+
 
     GhostType(String display) {
         this.display = display;
