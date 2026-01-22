@@ -10,8 +10,15 @@ commands:
     description: Give ghost items
     usage: /ghost <type>
     permission: ghostsmp.use
+  ghostreload:
+    description: Reload the plugin configuration
+    usage: /ghostreload
+    permission: ghostsmp.reload
 
 permissions:
   ghostsmp.use:
     description: Use ghost items
     default: true
+  ghostsmp.reload:
+    description: Reload the plugin configuration
+    default: op

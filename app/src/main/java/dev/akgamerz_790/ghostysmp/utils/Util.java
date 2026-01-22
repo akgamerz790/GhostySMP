@@ -1,7 +1,7 @@
 package dev.akgamerz_790.ghostysmp.utils;
 
 import dev.akgamerz_790.ghostysmp.GhostySMP;
-import dev.akgamerz_790.ghostysmp.core.GhostType;
+import dev.akgamerz_790.ghostysmp.core.GhostAbilityType;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -17,7 +17,7 @@ public final class Util {
 
     /* ===================== PARTICLES ===================== */
 
-    public static void spawnGhostParticles(GhostType type, Location loc, Player owner) {
+    public static void spawnGhostParticles(GhostAbilityType type, Location loc, Player owner) {
         World world = loc.getWorld();
         if (world == null || owner == null) return;
 
@@ -106,7 +106,7 @@ public final class Util {
         ItemMeta meta = bow.getItemMeta();
 
         if (meta != null) {
-            meta.setDisplayName(ChatColor.GOLD + "⚡ God Bow");
+            meta.setDisplayName(ChatColor.GOLD + "Chutiya Bow");
             meta.addEnchant(Enchantment.FLAME, 1, true);
             meta.addEnchant(Enchantment.PUNCH, 2, true);
             meta.addEnchant(Enchantment.INFINITY, 1, true);
@@ -114,7 +114,7 @@ public final class Util {
         }
 
         p.getInventory().addItem(bow);
-        p.sendMessage(ChatColor.GOLD + "God Bow granted for 15 seconds.");
+        p.sendMessage(ChatColor.GOLD + "Chutiya Bow mila re! 15 seconds ke liye god ban gaya, ab maro sabko!");
 
         new BukkitRunnable() {
             @Override
@@ -137,7 +137,7 @@ public final class Util {
                         200,
                         2
                 ));
-                owner.sendMessage(ChatColor.AQUA + "Target tracked.");
+                owner.sendMessage(ChatColor.AQUA + "Target track ho gaya, ab jaake maaro chutiye!");
                 return;
             }
         }

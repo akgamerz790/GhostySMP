@@ -4,7 +4,7 @@ import org.bukkit.NamespacedKey;
 
 import dev.akgamerz_790.ghostysmp.GhostySMP;
 
-public enum GhostType {
+public enum GhostAbilityType {
 
     DRAUGR("Draugr"),
     POLTERGEIST("Poltergeist"),
@@ -28,7 +28,7 @@ public enum GhostType {
 }
 
 
-    GhostType(String display) {
+    GhostAbilityType(String display) {
         this.display = display;
         this.cooldownSeconds = GLOBAL_COOLDOWN_SECONDS;
     }

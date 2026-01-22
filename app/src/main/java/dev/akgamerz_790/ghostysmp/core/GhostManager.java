@@ -1,8 +1,8 @@
 package dev.akgamerz_790.ghostysmp.core;
 
 import dev.akgamerz_790.ghostysmp.GhostySMP;
-import dev.akgamerz_790.ghostysmp.core.GhostType;
-import dev.akgamerz_790.ghostysmp.abilities.AbilityManager;
+import dev.akgamerz_790.ghostysmp.core.GhostAbilityType;
+import dev.akgamerz_790.ghostysmp.abilities.AbilityHandler;
 import dev.akgamerz_790.ghostysmp.utils.Util;
 
 
@@ -20,7 +20,7 @@ import org.bukkit.util.*;
 import java.util.*;
 
 public class GhostManager implements Listener {
-    public static Map<UUID, Map<GhostType, Long>> cooldowns = new HashMap<>();
+    public static Map<UUID, Map<GhostAbilityType, Long>> cooldowns = new HashMap<>();
     public static Map<UUID, Location> ghostLocations = new HashMap<>();
     public static Map<UUID, Long> reflectUntil = new HashMap<>();
     public static Map<UUID, Boolean> anchorLocked = new HashMap<>();
@@ -74,15 +74,15 @@ public class GhostManager implements Listener {
         Player p = e.getPlayer();
         if (!e.hasItem() || p.hasCooldown(e.getItem().getType())) return;
         ItemMeta m = e.getItem().getItemMeta();
-        if (m == null || !m.getPersistentDataContainer().has(GhostType.TYPE_KEY(), PersistentDataType.STRING)) return;
-        
-        GhostType type = GhostType.valueOf(m.getPersistentDataContainer().get(GhostType.TYPE_KEY(), PersistentDataType.STRING));
+        if (m == null || !m.getPersistentDataContainer().has(GhostAbilityType.TYPE_KEY(), PersistentDataType.STRING)) return;
+
+        GhostAbilityType type = GhostAbilityType.valueOf(m.getPersistentDataContainer().get(GhostAbilityType.TYPE_KEY(), PersistentDataType.STRING));
         UUID id = p.getUniqueId();
         cooldowns.computeIfAbsent(id, k -> new HashMap<>());
         long now = System.currentTimeMillis();
         if (cooldowns.get(id).getOrDefault(type, 0L) > now) {
             long remain = (cooldowns.get(id).get(type) - now) / 1000;
-            p.sendMessage(ChatColor.RED + "Cooldown: " + remain + "s!");
+            p.sendMessage(ChatColor.RED + "Cooldown bhai, " + remain + "s ruk ja chutiye!");
             return;
         }
         
@@ -97,7 +97,7 @@ public class GhostManager implements Listener {
             target = (Player) hit.getHitEntity();
         }
         
-        AbilityManager.activateAbility(type, p, target);
+        AbilityHandler.activateAbility(type, p, target);
         cooldowns.get(id).put(type, now + type.cooldownSeconds * 1000L);
         p.setCooldown(Material.BLAZE_ROD, type.cooldownSeconds * 20);
     }
@@ -119,7 +119,7 @@ public class GhostManager implements Listener {
         if (e.getEntity().getType() == EntityType.ENDER_PEARL) {
             if (e.getEntity().getShooter() instanceof Player s && anchorLocked.getOrDefault(s.getUniqueId(), false)) {
                 e.setCancelled(true);
-                s.sendMessage(ChatColor.RED + "No enderpearl!");
+                s.sendMessage(ChatColor.RED + "Ender pearl nahi allowed bhai, ruk ja chutiye!");
                 anchorLocked.remove(s.getUniqueId());
             }
         }
