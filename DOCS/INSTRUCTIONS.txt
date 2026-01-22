@@ -1,0 +1,140 @@
+Ghosty SMP ------------------------ INSTRUCTIONS
+Ghost Abilities (by Tier)
+The Draugr (Mid Tier)
+
+    Ability name: Super Crush
+
+    How it works: On spawn, deals 77 hearts of damage to a specific targeted player (not the ghost owner).
+
+    Duration: Instant (on spawn)
+
+    Cooldown: 15 seconds
+
+The Poltergeist (High Tier)
+
+    Ability name: Object Throw
+
+    How it works: For 15 seconds, throws any nearby blocks within a 10-block radius from its current location, excluding the ghost owner.
+
+    Duration: 15 seconds
+
+    Cooldown: 15 seconds
+
+The Anchors (Low Tier)
+
+    Ability name: Harm of Weight
+
+    How it works: If a player enters a 99-block radius:
+
+        Jump height becomes 00
+
+        Movement speed becomes 20%20%
+
+        Ender pearls cannot be used
+        (All effects exclude the ghost owner.)
+
+    Duration: Not specified
+
+    Cooldown: 15 seconds
+
+The Disruptors (Mid Tier)
+
+    Ability name: Mind Control
+
+    How it works: For 15 seconds, if a player is within a 10-block radius and tries to hit the ghost owner, 90%90% of that damage is reflected back onto the attacker (excluding the ghost owner).
+
+    Duration: 15 seconds
+
+    Cooldown: 15 seconds
+
+The Shifter (High Tier)
+
+    Ability name: Air Pearl
+
+    How it works: When aiming at a specific player:
+
+        Teleports the target 5050 blocks into the air
+
+        Locks all movement/actions (placing blocks, using mace, using ender pearls, MLG, etc.)
+        (Excludes the ghost owner.)
+
+    Duration: Not specified
+
+    Cooldown: 15 seconds
+
+The Infector (Low Tier)
+
+    Ability name: Poison Fortress
+
+    How it works: If a player comes within a 77-block radius, poison is applied until the player has taken 99 hearts of damage total (excluding the ghost owner).
+
+    Duration: Until 99 hearts damage is dealt
+
+    Cooldown: 15 seconds
+
+The Drainer (High Tier)
+
+    Ability name: Stack of Blood
+
+    How it works: When aiming at a specific player:
+
+        Instantly deals 10 hearts of damage
+
+        Then deals 11 heart of damage every second for 10 seconds
+        (Excludes the ghost owner.)
+
+    Duration: 10 seconds (damage-over-time portion)
+
+    Cooldown: 3030 seconds
+
+The Scavenger (Mid Tier)
+
+    Ability name: The God Bow
+
+    How it works: On use, a custom bow appears in the inventory for 15 seconds. The bow does normal damage but includes enchantments like Flame, Punch, and Multishot.
+
+    Duration: 15 seconds
+
+    Cooldown: 15 seconds
+
+Remaining Half
+The Tracker (Low Tier)
+
+    Ability name: Tracking
+
+    How it works:
+
+        Tracks any online player and teleports to them
+
+        After teleporting, gains a shield for 10 seconds
+
+        Has a special UI that shows every player online
+
+    Duration: Shield lasts 10 seconds
+
+    Cooldown: 15 seconds
+
+The Reeper (High Tier)
+
+    Ability name: Skin Reeper
+
+    How it works: When aiming at a specific player:
+
+        Deals 1717 hearts of damage instantly
+
+        Then deals 11 heart of damage every second for 55 seconds
+
+    Duration: 55 seconds (damage-over-time portion)
+
+    Cooldown: Not specified
+
+The Summoners (Mid Tier)
+
+    Ability name: Summon of Guards
+
+    How it works: Summons 22 Iron Golems.
+
+    Duration: Not specified
+
+    Cooldown: Not specified
+

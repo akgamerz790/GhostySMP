@@ -18,7 +18,7 @@ public enum GhostType {
     SUMMONERS("Summoners"),
     DRAINER("Drainer");
 
-    private static final int GLOBAL_COOLDOWN_SECONDS = 2;
+    private static final int GLOBAL_COOLDOWN_SECONDS = 17;
 
     public final String display;
     public final int cooldownSeconds;
