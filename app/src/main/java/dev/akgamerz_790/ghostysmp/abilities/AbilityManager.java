@@ -67,18 +67,17 @@ public class AbilityManager implements org.bukkit.event.Listener {
 
     Random random = new Random();
 
-    int radius = 6;          // tight area
-    int heightUp = 4;        // only a few blocks above
-    int heightDown = 5;      // a bit below
+    int radius = 6;
+    int heightUp = 4;
+    int heightDown = 5;
 
     for (int y = -heightDown; y <= heightUp; y++) {
         for (int x = -radius; x <= radius; x++) {
             for (int z = -radius; z <= radius; z++) {
 
-                // spherical filter for a smooth dome
                 double dist = Math.sqrt(x*x + y*y + z*z);
                 if (dist > radius) continue;
-                if (random.nextDouble() > 0.85) continue; // dense but not ALL
+                if (random.nextDouble() > 0.85) continue;
 
                 Location blockLoc = loc.clone().add(x, y, z);
                 Block block = blockLoc.getBlock();
@@ -86,32 +85,35 @@ public class AbilityManager implements org.bukkit.event.Listener {
 
                 if (!mat.isSolid() || mat == Material.BEDROCK) continue;
 
-                FallingBlock fb = world.spawnFallingBlock(
-                        blockLoc,
-                        block.getBlockData()
-                );
+                // Spawn falling block entity (visual + physics)
+                FallingBlock fb = world.spawnFallingBlock(blockLoc, block.getBlockData());
 
-                // Keep original block intact
                 fb.setDropItem(false);
                 fb.setHurtEntities(false);
 
-                // small upward + outward force
+                // CRITICAL: Actually remove the terrain block to create crater
+                block.setType(Material.AIR, false);
+
+                // DO NOT setCancelDrop(true) - let them re-land naturally
+
+                // Fixed velocities (was way too high before)
                 double vx = (x + (random.nextDouble() - 0.5)) * 0.2;
                 double vz = (z + (random.nextDouble() - 0.5)) * 0.3;
-                double vy = 8 + random.nextDouble() * 0.1; // gentle lift
+                double vy = 0.9 + random.nextDouble() * 0.25;
 
                 fb.setVelocity(new Vector(vx, vy, vz));
             }
         }
     }
 
-    // ✨ particles to make it look magical / chaotic
+    // Particles and sounds unchanged
     world.spawnParticle(Particle.CLOUD, loc, 60, 2, 1, 2, 0.05);
     world.spawnParticle(Particle.CLOUD, loc, 80, 1.5, 1, 1.5, 0.02);
 
     world.playSound(loc, Sound.ENTITY_ENDERMAN_TELEPORT, 1.5f, 0.8f);
     world.playSound(loc, Sound.ENTITY_WARDEN_HURT, 1f, 1f);
 }
+
 
 
 
