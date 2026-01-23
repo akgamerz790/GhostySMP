@@ -12,6 +12,7 @@ public class PoltergeistAbility extends Ability {
 
     @Override
     public void activate(Player owner, Player target) {
+        owner.sendMessage("Poltergeist triggered, bhosdike! Ab blocks ko gaand maro.");
         Location loc = owner.getLocation();
         World world = loc.getWorld();
         if (world == null) return;

@@ -39,14 +39,18 @@ public class AbilityHandler implements org.bukkit.event.Listener {
     }
 
     public static boolean handleCommand(CommandSender sender, String[] args) {
-        if (!(sender instanceof Player p) || args.length == 0) return false;
+        if (!(sender instanceof Player p)) return false;
+        if (args.length == 0) {
+            p.sendMessage(ChatColor.GOLD + "Available ghosts chutiyapa: draugr, poltergeist, anchors, disruptors, shifter, infector, drainer, scavenger, tracker, reeper, summoners");
+            return true;
+        }
         try {
             GhostAbilityType type = GhostAbilityType.valueOf(args[0].toUpperCase());
             p.getInventory().addItem(createGhostItem(type));
             p.sendMessage(ChatColor.GREEN + "Bhosdike " + type.display + " Ghost mila! Jaise teri maa ne diya ho.");
             return true;
         } catch (Exception e) {
-            p.sendMessage(ChatColor.RED + "Available ghosts: draugr (lauda), poltergeist (bhosda), anchors (gandu), disruptors (randwa), shifter (chod), infector (gaand mara), drainer (chutiya), scavenger (bhenchod), tracker (madarchod), reeper (behen ke lode), summoners (sala)");
+            p.sendMessage(ChatColor.RED + "Bhosdike galat naam! Available ghosts: draugr, poltergeist, anchors, disruptors, shifter, infector, drainer, scavenger, tracker, reeper, summoners");
             return true;
         }
     }

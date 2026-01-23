@@ -237,6 +237,24 @@ public void onEnable() {
         return false;
     }
 
+    // Tab completion for commands
+    @Override
+    public java.util.List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        if (command.getName().equalsIgnoreCase("ghost")) {
+            if (args.length == 1) {
+                java.util.List<String> suggestions = new java.util.ArrayList<>();
+                String input = args[0].toLowerCase();
+                for (dev.akgamerz_790.ghostysmp.core.GhostAbilityType type : dev.akgamerz_790.ghostysmp.core.GhostAbilityType.values()) {
+                    if (type.name().toLowerCase().startsWith(input)) {
+                        suggestions.add(type.name().toLowerCase());
+                    }
+                }
+                return suggestions;
+            }
+        }
+        return null;
+    }
+
     // Starts recurring aura particle effect for ghosts
     public void startAuraTask() {
         new BukkitRunnable() {
