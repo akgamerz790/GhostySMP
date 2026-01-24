@@ -1,7 +1,10 @@
 package dev.akgamerz_790.ghostysmp.abilities;
 
-import org.bukkit.Particle;
+import org.bukkit.*;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import dev.akgamerz_790.ghostysmp.GhostySMP;
 

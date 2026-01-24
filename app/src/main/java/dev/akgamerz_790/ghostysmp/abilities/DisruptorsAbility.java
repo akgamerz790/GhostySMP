@@ -4,6 +4,7 @@ import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 
 import dev.akgamerz_790.ghostysmp.GhostySMP;
+import dev.akgamerz_790.ghostysmp.core.GhostManager;
 
 public class DisruptorsAbility extends Ability {
 
