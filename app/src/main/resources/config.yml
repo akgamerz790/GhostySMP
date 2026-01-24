@@ -9,7 +9,7 @@ abilities:
   draugr:  # Draugr ki maa ki chut, super crush karega!
     damage: 14.0  # 7 hearts, gandu ko mar dega!
   poltergeist:  # Poltergeist, bhenchod blocks ko throw karega!
-    radius: 6  # 6 blocks, chutiya players ko pakadega!
+    radius: 10  # 10 blocks, chutiya players ko pakadega!
     height_up: 4  # Uppar tak, madarchod!
     height_down: 5  # Neeche tak, gaand mein ghusega!
     destruction_chance: 0.85  # 85% chance, randwa blocks tod dega!

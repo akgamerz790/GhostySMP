@@ -34,8 +34,14 @@ public class AbilityHandler implements org.bukkit.event.Listener {
         abilities.put(GhostAbilityType.DRAUGR, new DraugrAbility());
         abilities.put(GhostAbilityType.POLTERGEIST, new PoltergeistAbility());
         abilities.put(GhostAbilityType.ANCHORS, new AnchorsAbility());
+        abilities.put(GhostAbilityType.DISRUPTORS, new DisruptorsAbility());
+        abilities.put(GhostAbilityType.SHIFTER, new ShifterAbility());
+        abilities.put(GhostAbilityType.INFECTOR, new InfectorAbility());
+        abilities.put(GhostAbilityType.DRAINER, new DrainerAbility());
+        abilities.put(GhostAbilityType.SCAVENGER, new ScavengerAbility());
         abilities.put(GhostAbilityType.TRACKER, new TrackerAbility());
-        // Add other abilities here
+        abilities.put(GhostAbilityType.REEPER, new ReeperAbility());
+        abilities.put(GhostAbilityType.SUMMONERS, new SummonersAbility());
     }
 
     public static boolean handleCommand(CommandSender sender, String[] args) {

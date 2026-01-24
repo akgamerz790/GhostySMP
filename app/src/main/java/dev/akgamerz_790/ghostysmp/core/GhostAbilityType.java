@@ -12,11 +12,11 @@ public enum GhostAbilityType {
     DISRUPTORS("Disruptors"),
     SHIFTER("Shifter"),
     INFECTOR("Infector"),
+    DRAINER("Drainer"),
     SCAVENGER("Scavenger"),
     TRACKER("Tracker"),
     REEPER("Reeper"),
-    SUMMONERS("Summoners"),
-    DRAINER("Drainer");
+    SUMMONERS("Summoners");
 
     private static final int GLOBAL_COOLDOWN_SECONDS = 17;
 
